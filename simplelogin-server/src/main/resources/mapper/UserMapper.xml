@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huahua.simplelogin.server.dao.UserDao">
+    <!--resultMap:数据库查询返回结果集映射，id:唯一标志名；type:返回结果集的类型，入java对象类型-->
+    <resultMap id="resultMap_user" type="com.huahua.simplelogin.client.entry.User">
+    <!--result:返回的结果集字段对应java对象属性，property:属性名；column:字段名-->
+    <result property="id" column="id"/>
+    <result property="username" column="username"/>
+    <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="find" parameterType="java.util.Map" resultMap="resultMap_user">
+		SELECT
+			${userid} AS id,
+			${username} AS username
+		FROM ${table}
+		WHERE ${username} = #{user.username} AND ${password} = #{user.password}
+		LIMIT 1
+
+    </select>
+</mapper>
