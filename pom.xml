@@ -15,7 +15,7 @@
     <properties>
         <junit.version>4.12</junit.version>
         <servlet.version>3.1.0</servlet.version>
-        <spring.version>4.3.10.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <freemarker.version>2.3.23</freemarker.version>
     </properties>
     <dependencyManagement>
